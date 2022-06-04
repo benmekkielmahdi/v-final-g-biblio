@@ -99,7 +99,15 @@
 
                                     </td>
                                     <td>
-                                        
+                                    <form action="{{ route('Category.destroy',$cat) }}" method="POST">
+                                        @csrf
+                                        @method("DELETE")
+
+                                        <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')"  class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                        <a type="button"  href="{{ route('Category.edit',$cat)}}"   class="btn btn-warning btn-sm " ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+
+                                    </form>  
+
                                     </td>
                                     
                                 </tr>

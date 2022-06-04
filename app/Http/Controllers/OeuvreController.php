@@ -92,7 +92,7 @@ class OeuvreController extends Controller
     public function edit(Oeuvre $Oeuvre) 
     { 
         $categories= Category::all();
-      //  return view('admin.operations.edit')->with('oeuvre', $oeuvre); 
+
         return view('admin.operations.edit', compact('Oeuvre','categories'));
       
     }
@@ -106,7 +106,7 @@ class OeuvreController extends Controller
      */
     public function update(UpdateOeuvreRequest $request, Oeuvre $Oeuvre)
     {
- $Oeuvre->titre = $request->input('titre');
+        $Oeuvre->titre = $request->input('titre');
         $Oeuvre->auteur = $request->input('auteur');
         $Oeuvre->annee = $request->input('annee');
         $Oeuvre->description = $request->input('description');

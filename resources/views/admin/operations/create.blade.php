@@ -86,7 +86,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" name="qt" type="text" placeholder=" qt" />
+                                                        <input class="form-control" name="qt" type="number" placeholder=" qt" />
                                                         <label for="qt">Qt</label>
                                                     </div>
                                                 </div>

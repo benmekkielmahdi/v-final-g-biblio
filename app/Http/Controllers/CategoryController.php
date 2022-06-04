@@ -65,9 +65,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $Category)
     {
-        //
+       
+        return view('admin.category-operations.edit',compact('Category'));
+      
     }
 
     /**
@@ -77,9 +79,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCategoryRequest $request, Category $Category)
     {
-        //
+        $Category->nom = $request->input('nom');
+        $Category->is_online = $request->input('is_online');
+        
+        $Category->save();
+      return redirect('Category')->with('message','updated');
+        
     }
 
     /**
@@ -88,8 +95,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, $id)
     {
-        //
+        $category = Category::find($id);
+
+        $category->delete();
+        return redirect()->back();
     }
 }
