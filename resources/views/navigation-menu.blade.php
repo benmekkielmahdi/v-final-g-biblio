@@ -20,6 +20,9 @@
                     <x-jet-nav-link href="{{ route('books') }}" :active="request()->routeIs('books')">
                         {{ __('Oeuvres') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('Rapport.index') }}" :active="request()->routeIs('Rapport.index')">
+                        {{ __('Rapports') }}
+                    </x-jet-nav-link>
                     
                 @if(Auth::user()->role == 1)
                     <x-jet-nav-link href="{{ url('Oeuvre') }}" :active="request()->routeIs('Oeuvre')">
@@ -149,13 +152,22 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Home') }}
+                {{ __('Accueil') }}
             </x-jet-responsive-nav-link>
 
             <x-jet-nav-link href="{{ route('books') }}" :active="request()->routeIs('books')">
-                {{ __('Books') }}
+                {{ __('Oeuvres') }}
+            </x-jet-nav-link>
+
+            <x-jet-nav-link href="{{ route('Rapport.index') }}" :active="request()->routeIs('Rapport.index')">
+                {{ __('Rapports') }}
             </x-jet-nav-link>
             
+            @if(Auth::user()->role == 1)
+            <x-jet-nav-link href="{{ route('Oeuvre.index') }}" :active="request()->routeIs('Oeuvre.index')">
+                {{ __('Admin') }}
+            </x-jet-nav-link>
+            @endif
 
         </div>
 

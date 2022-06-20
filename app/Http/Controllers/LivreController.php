@@ -12,12 +12,7 @@ class LivreController extends Controller
 
     public function index(Request $request)
     {
-        /*
-         $books= Book::paginate(3);
-         $categories = Category::where('is_online',1)->get();
-
-         return view('books', compact('books','categories'));
-         */
+       
         $oeuvre= Oeuvre::where('category_id', $request->id)->paginate(12);
         $categories= Category::all();
          $oeuvre =new Oeuvre;
@@ -38,21 +33,7 @@ class LivreController extends Controller
         $oeuvre= Oeuvre::find($request->id);
         return view('bookdetails', compact('oeuvre'));
     }
-
-/*
-    public function bookdetails(Request $request){
-
-        $book= Book::find($request->id);
-        return view('bookdetails', compact('book'));
-    }
-   
-    public function viewByCategory(Request $request){
-
-        $books= Book::where('category_id', $request->id)->paginate(3);
-       $categories= Category::all();
-         return view('books', compact('books','categories'));
-    }
-*/
+    
 
     
 }

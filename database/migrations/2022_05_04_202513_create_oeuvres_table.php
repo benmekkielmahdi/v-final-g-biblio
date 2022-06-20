@@ -18,7 +18,7 @@ class CreateOeuvresTable extends Migration
             $table->string('titre');
             $table->string('auteur');
             $table->date('annee');
-            $table->text('description');
+            $table->longText('description');
             $table->string('image');
             $table->integer('qt');
             $table->unsignedBigInteger('category_id')->nullable();

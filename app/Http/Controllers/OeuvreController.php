@@ -92,7 +92,6 @@ class OeuvreController extends Controller
     public function edit(Oeuvre $Oeuvre) 
     { 
         $categories= Category::all();
-
         return view('admin.operations.edit', compact('Oeuvre','categories'));
       
     }
