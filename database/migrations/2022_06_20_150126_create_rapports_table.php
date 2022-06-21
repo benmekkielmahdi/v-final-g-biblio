@@ -22,6 +22,9 @@ class CreateRapportsTable extends Migration
             $table->longText('desc');
             $table->date('date');
             $table->string('versionpdf');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+       
             $table->timestamps();
         });
     }

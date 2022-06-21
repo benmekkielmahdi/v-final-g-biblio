@@ -57,6 +57,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Categories
                             </a>
+                            <a class="nav-link" href="{{ url('Rapport') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Rapports
+                            </a>
                            
                         </div>
                     </div>

@@ -59,5 +59,10 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
+        RateLimiter::for('rapportlimiter', function (Request $request) {
+            return Limit::perDay(2)->by(optional($request->user())->id ?: $request->ip())->response(function(){
+                return response('vous pouvez ajouter deux rapports maximum');
+            });
+        });
     }
 }

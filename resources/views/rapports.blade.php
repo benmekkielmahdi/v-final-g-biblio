@@ -8,14 +8,18 @@
 
 <style>
     #gal{
-        min-width: 160px;
-        max-width: 160px;
+        min-width: 170px;
+        max-width: 170px;
         margin: 1rem;
     }
     .card-img-top{
-        width: 160px;
-        height : 210px;
+        width: 140px;
+        height : 140px;
     }
+    .card-body{
+      object-fit:contain;
+    }
+    
 </style>
 
 
@@ -29,14 +33,24 @@
                  @forelse($rapport as $ouvrage)
                 
                 <div class="card mr-3" id="gal">
-                    <a href="#"><img class="card-img-top" src="{{ asset('storage/'.$ouvrage->image) }}" alt="Card image cap"></a>
+                  <iframe src="/storage/{{$ouvrage->versionpdf}}"  frameborder="0" scrolling="no" style="height:140px;width:166px;border:none;"   ></iframe></a>
                     <div class="card-body">
-                    <a href="#"><h5 class="card-title"><b>{{ $ouvrage->title }}</b></h5></a>
-                    <a href="#" ><p class="card-text"><i>{{ $ouvrage->etudiant }}</i></p></a>
+                      <a href="#"><h5 class="card-title"><b>{{ $ouvrage->title }}</b></h5></a>
+                      <p class="card-text" style="color: #9e9a75 ;font-family: 'Quicksand';"><i>{{ $ouvrage->etudiant }}</i></p>
+                      @if(Auth::user()->id == $ouvrage->user_id) 
+          
+                      <form action="{{ route('Rapport.destroy',$ouvrage) }}" method="POST">
+                        @csrf
+                        @method("DELETE")
+
+                        <button  style="float:left;" type="submit" onclick="return confirm('voulez-vous vraiment supprimer ce rapport?')"  class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      </form>
+                      @endif
+                      <a href="{{ route('Rapport.show',$ouvrage) }}"><button type="submit"  style="float:right;" class="btn btn-primary btn-sm"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></button></a>
                     </div>
                     
                 </div> 
-              
+            
                 @empty
                     <div>No Item Found!</div>
                
@@ -63,44 +77,56 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{route('Rapport.store') }}" method="post" enctype="multipart/form-data">
+        <form id="creq" action="{{ action('RapportController@store') }}" method="post" enctype="multipart/form-data">
         @csrf
+        
           <div class="mb-3">
-            <label for="title" class="col-form-label">sujet :</label>
-            <input type="text" class="form-control" id="title">
+            <label for="title" class="col-form-label">Sujet :</label>
+            <input type="text" class="form-control" name="title">
           </div>
          
           <div class="mb-3">
             <label for="filiere" class="col-form-label">Filière :</label>
-            <input type="text" class="form-control" id="filiere">
+            <input type="text" class="form-control" name="filiere">
           </div>
           <div class="mb-3">
-            <label for="typerapport" class="col-form-label">type de rapport:</label>
-            <input type="text" class="form-control" id="typerapport">
+            <label for="typerapport" class="col-form-label">Type de rapport:</label>
+            <select class="form-control" 
+              id="typerapport" 
+              name="typerapport" 
+              value="">
+                <option value="Fin d'étude">Fin d'étude</option>
+                <option value="Stage">Stage</option>
+              </select>
           </div>
           <div class="mb-3">
             <label for="etudiant" class="col-form-label">Nom étudiant:</label>
-            <input type="text" class="form-control" id="etudiant">
+            <input type="text" class="form-control" name="etudiant" value="{{Auth::user()->name}}">
           </div>
           <div class="mb-3">
-            <label for="desc" class="col-form-label">description:</label>
-            <input type="text" class="form-control" id="desc">
+            <label for="desc" class="col-form-label">Description:</label>
+            <textarea
+                name="desc" 
+                class="form-control" 
+                placeholder="Enter description">
+            </textarea>  
           </div>
           <div class="mb-3">
-            <label for="date" class="col-form-label">date:</label>
-            <input type="date" class="form-control" id="date">
+            <label for="date" class="col-form-label">Date:</label>
+            <input type="date" class="form-control" name="date">
           </div>
           
           <div class="mb-3">
-            <label for="versionpdf" class="col-form-label">versionpdf:</label>
-            <input type="file" class="form-control" id="versionpdf">
+            <label for="versionpdf" class="col-form-label">version PDF:</label>
+            <input type="file" class="form-control" name="versionpdf">
           </div>
           
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        <button type="submit" class="btn btn-primary">Ajouter le rapport</button>
+        <button type="button" class="btn btn-primary" onClick="event.preventDefault();
+        document.getElementById('creq').submit();">Ajouter le rapport</button>
       </div>
     </div>
   </div>

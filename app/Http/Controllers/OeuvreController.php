@@ -6,6 +6,7 @@ use Auth;
 use App\Models\Oeuvre;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\StoreOeuvreRequest;
 use App\Http\Requests\UpdateOeuvreRequest;
 
@@ -105,20 +106,21 @@ class OeuvreController extends Controller
      */
     public function update(UpdateOeuvreRequest $request, Oeuvre $Oeuvre)
     {
+        
         $Oeuvre->titre = $request->input('titre');
         $Oeuvre->auteur = $request->input('auteur');
         $Oeuvre->annee = $request->input('annee');
         $Oeuvre->description = $request->input('description');
         if ($request->file('image') != null) {
-           
-           $Oeuvre->image = $request->file('image')->store('image');  
+            
+            $Oeuvre->image = $request->file('image')->store('image');  
         }
 
         $Oeuvre->category_id = $request->input('category_id');
         $Oeuvre->qt = $request->input('qt');
         
-      $Oeuvre->save();
-      return redirect('Oeuvre')->with('message','updated');
+        $Oeuvre->save();
+        return redirect('Oeuvre')->with('message','updated');
         
     }
 
@@ -131,7 +133,9 @@ class OeuvreController extends Controller
     public function destroy(Oeuvre $oeuvre,$id)
     {  
         $oeuvre = Oeuvre::find($id);
-
+        $file = $oeuvre->image;
+        $path = public_path('storage/'.$file);
+        unlink($path);
        $oeuvre->delete();
        return redirect()->back();
     }

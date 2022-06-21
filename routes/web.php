@@ -32,7 +32,6 @@ Route::get('/categories/{id}', 'LivreController@viewByCategory')->name('voirparc
 Route::resource('Rapport','RapportController');
 
 
-
 Route::middleware(['auth','admin'])->group(function(){
   Route::resource('Oeuvre','OeuvreController');
   Route::resource('Category','CategoryController');
