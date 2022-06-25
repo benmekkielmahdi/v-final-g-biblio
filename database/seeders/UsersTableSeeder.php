@@ -33,5 +33,22 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
              
         ]);
+        DB::table('users')->insert([
+            'id'=>7,
+            'name'=>'moad',
+            'email'=>'moadazrou@gmail.com',
+            'role'=> 1,
+            'status_id'=> NULL,
+            'email_verified_at'=> NULL,
+            'password' => Hash::make('moad1234') ,   
+            'two_factor_secret' => NULL,
+            'two_factor_recovery_codes' => NULL,
+            'remember_token' => NULL,
+            'current_team_id' =>  NULL,
+            'profile_photo_path' => NULL, 
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+             
+        ]);
     }
 }
