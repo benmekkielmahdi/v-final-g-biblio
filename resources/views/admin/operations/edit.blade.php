@@ -68,7 +68,8 @@
                                                 </div>
                                                 <div class="form group">
                                                     <label for="photo">Image</label>
-                                                    <input class="form-control" value="{{ $Oeuvre->image }}" type="file" name="image" >
+                                                    <input class="form-control" type="file" value="{{ $Oeuvre->image }}"  name="image" >
+                                                    <img src="{{ asset('storage/'.$Oeuvre->image) }}" width="200px" >
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="categorie">

@@ -29,7 +29,7 @@ Route::get('/books/{id}', 'LivreController@bookdetails')->name('bookdetails');
 
 Route::get('/categories/{id}', 'LivreController@viewByCategory')->name('voirparcategorie');
 
-
+Route::resource('Rapport','RapportController');
 
 
 Route::middleware(['auth','admin'])->group(function(){

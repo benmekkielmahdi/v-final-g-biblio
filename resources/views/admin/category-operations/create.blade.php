@@ -43,7 +43,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" name="is_online" type="text" placeholder="status" />
+                                                        <input class="form-control" name="is_online" type="number" placeholder="status" />
                                                         <label for="is_online">status</label>
                                                     </div>
                                                 </div>
