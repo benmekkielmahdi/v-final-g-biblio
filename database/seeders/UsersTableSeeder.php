@@ -17,13 +17,13 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'id'=>7,
-            'name'=>'ismail',
-            'email'=>'ismailazrou@gmail.com',
+            'id'=>9,
+            'name'=>'Ismail',
+            'email'=>'Ismailazrou@gmail.com',
             'role'=> 1,
             'status_id'=> NULL,
             'email_verified_at'=> NULL,
-            'password' => Hash::make('ismail1234') ,   
+            'password' => Hash::make('Ismail1234') ,   
             'two_factor_secret' => NULL,
             'two_factor_recovery_codes' => NULL,
             'remember_token' => NULL,
