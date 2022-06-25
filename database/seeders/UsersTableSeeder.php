@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'id'=>9,
+        DB::table('users')->insertGetId([
+            
             'name'=>'Ismail',
             'email'=>'Ismailazrou@gmail.com',
             'role'=> 1,
@@ -33,8 +33,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
              
         ]);
-        DB::table('users')->insert([
-            'id'=>8,
+        DB::table('users')->insertGetId([
+            
             'name'=>'moad',
             'email'=>'moadazrou@gmail.com',
             'role'=> 1,
