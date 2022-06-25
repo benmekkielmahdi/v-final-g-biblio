@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LivreController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
