@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
              
         ]);
         DB::table('users')->insert([
-            'id'=>7,
+            'id'=>8,
             'name'=>'moad',
             'email'=>'moadazrou@gmail.com',
             'role'=> 1,
