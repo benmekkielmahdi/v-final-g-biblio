@@ -24,7 +24,7 @@
 
 
     <div class="py-12">
-   >
+   
     <button style="margin:1rem"  type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ajouter Rapport</button>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
