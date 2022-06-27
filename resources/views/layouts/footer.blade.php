@@ -13,8 +13,8 @@
     </footer>
     <style>
         footer {
-            background: #f0f8ff;
-            color: #779cb1;
+            background: white;
+            color: grey;
             padding: 40px 0;
         }
 
