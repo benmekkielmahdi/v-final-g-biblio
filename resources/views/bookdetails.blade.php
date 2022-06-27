@@ -46,10 +46,10 @@
             height:100%;
             object-fit:contain;
         }
-    @media only screen and (max-width: 327px) {
+    @media only screen and (max-width: 517px) {
         .book-information{
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 2fr;
             grid-gap: 10px;
             padding: 10px 0 12px;
 
