@@ -179,7 +179,11 @@
                         <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> 60a4b9ddfe333fe1d660863b1cb7740b7a89e6fb
                 
             </div>
 

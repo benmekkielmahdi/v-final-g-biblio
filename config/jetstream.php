@@ -57,7 +57,11 @@ return [
     'features' => [
         // Features::termsAndPrivacyPolicy(),
         Features::profilePhotos(),
+<<<<<<< HEAD
         //Features::api(),
+=======
+        // Features::api(),
+>>>>>>> 60a4b9ddfe333fe1d660863b1cb7740b7a89e6fb
         // Features::teams(['invitations' => true]),
         Features::accountDeletion(),
     ],

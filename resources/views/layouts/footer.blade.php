@@ -34,9 +34,17 @@
             }
 
             a {
+<<<<<<< HEAD
             color: white;
+=======
+            color: grey;
+>>>>>>> 60a4b9ddfe333fe1d660863b1cb7740b7a89e6fb
             
             }
            
         }
+<<<<<<< HEAD
     </style>
+=======
+    </style>
+>>>>>>> 60a4b9ddfe333fe1d660863b1cb7740b7a89e6fb
