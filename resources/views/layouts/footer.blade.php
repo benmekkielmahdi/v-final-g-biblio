@@ -34,7 +34,7 @@
             }
 
             a {
-            color: white;
+            color: grey;
             
             }
            
