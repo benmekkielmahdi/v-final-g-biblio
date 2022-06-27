@@ -44,4 +44,6 @@
 
         @livewireScripts
     </body>
+    @include('layouts.footer')
+    @yield('footer')
 </html>
