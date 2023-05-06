@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="me.css" type='text/css' />
-        <link rel="icon" href="https://i.postimg.cc/XGYYv2B1/books.png">
+        <link rel="icon" href="globe.png">
 
         <title>Biblio</title>
 

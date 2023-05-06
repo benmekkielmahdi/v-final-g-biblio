@@ -77,10 +77,29 @@
                         <p class="card-text"><span style=" border :2px solid lightgrey ; display:inline;" >Quantité : {{ $oeuvre->qt }}</span></p></a>
 
                     </div>
+                   
                     
                 </div>
             </div>  
         </div>
+    </div>
+    <div class="m-3">
+      <h1> Comments : </h1>
+
+      <form action="{{url('books/'.$oeuvre->id) }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input for="body" type="text" class="form-control w-25 " name="body">
+        <button type="submit"  class="btn btn-primary m-2">publish</button>
+      </form> 
+
+      <div>
+      @foreach($comments as $comment)
+      <div class='m-4 bg-gray-900 '>
+      {{ $comment->body }}
+      </div>
+      @endforeach
+      </div>
+
     </div>
 <!-- MODAL -->
 

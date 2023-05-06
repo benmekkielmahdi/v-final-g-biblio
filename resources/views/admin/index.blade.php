@@ -16,6 +16,7 @@
         .hide_content{
         display: none;
         }
+       
       </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +32,7 @@
         <link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+   
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
                <!-- Sidebar Toggle-->
@@ -46,21 +48,18 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Oeuvre</div>
                             <a class="nav-link" href="{{ url('/Oeuvre') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                Oeuvre
                             </a>
                           
                             <div class="sb-sidenav-menu-heading">Tasks</div>
                             <a class="nav-link" href="{{ url('Category') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
                                 Categories
                             </a>
-                            <a class="nav-link" href="{{ url('Rapport') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Rapports
-                            </a>
+                            
                            
                         </div>
                     </div>
@@ -144,13 +143,7 @@
                                                 </form>
 
                                             </td>
-                                            <td>
-                                                @if(auth::user()->role==1)
-                                                
-                                                <!--data-toggle="modal" data-target="#exampleModal"-->
-                                                
-                                                @endif
-                                            </td>
+                                         
                                             
                                         </tr>
                                         @endforeach
@@ -177,10 +170,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="{{asset('assets/demo/chart-area-demo.js')}}"></script>
+        <script src="{{asset('assets/demo/chart-bar-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script type="text/javascript">
         // Hide the extra content initially, using JS so that if JS is disabled, no problemo:

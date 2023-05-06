@@ -28,10 +28,12 @@ Route::get('/user', 'UserController@index')->name('user')->middleware('user');
 Route::get('/books', 'LivreController@index')->name('books');
 
 Route::get('/books/{id}', 'LivreController@bookdetails')->name('bookdetails');
+Route::post('/books/{id}', 'LivreController@storecomment')->name('storecomment');
 
 Route::get('/categories/{id}', 'LivreController@viewByCategory')->name('voirparcategorie');
 
 Route::resource('Rapport','RapportController');
+
 
 
 Route::middleware(['auth','admin'])->group(function(){

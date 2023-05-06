@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Oeuvre;
-
+use Illuminate\Support\Facades\Storage;
 use App\Models\Category;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\StoreOeuvreRequest;
@@ -106,19 +106,37 @@ class OeuvreController extends Controller
      */
     public function update(UpdateOeuvreRequest $request, Oeuvre $Oeuvre)
     {
-        
-        $Oeuvre->titre = $request->input('titre');
-        $Oeuvre->auteur = $request->input('auteur');
-        $Oeuvre->annee = $request->input('annee');
-        $Oeuvre->description = $request->input('description');
-        if ($request->file('image') != null) {
-            
-            $Oeuvre->image = $request->file('image')->store('image');  
-        }
+        $data = $request->validate([
+            'titre'=>'required',
+            'auteur'=>'required',
+            'annee'=>'required',
+            'image'=>'required',
+            'description'=>'required',
+            'category_id'=>'required',
+            'qt'=>'required',
+         
+        ]);
+     
+        if($request->hasFile('image')){
+            if($Oeuvre->image){
+                Storage::delete($Oeuvre->image);
 
-        $Oeuvre->category_id = $request->input('category_id');
-        $Oeuvre->qt = $request->input('qt');
-        
+            }
+            $file = $request->file('image');
+            $extesion= $file->getClientOriginalExtension();
+            $filename = time().'.'.$extesion;
+            $file->move('storage/', $filename);
+            $Oeuvre->image = $filename;
+        }
+   
+
+        $Oeuvre->titre = $data['titre'];
+        $Oeuvre->auteur = $data['auteur'];
+        $Oeuvre->annee = $data['annee'];
+        $Oeuvre->description = $data['description'];
+        $Oeuvre->category_id = $data['category_id'];
+        $Oeuvre->qt = $data['qt'];
+    
         $Oeuvre->save();
         return redirect('Oeuvre')->with('message','updated');
         

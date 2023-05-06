@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
- <link rel="icon" href="https://i.postimg.cc/XGYYv2B1/books.png">
+ <link rel="icon" href="globe.png">
 
 <style>
     #gal{
@@ -24,11 +24,7 @@
 
 
     <div class="py-12">
-<<<<<<< HEAD
     
-=======
-   
->>>>>>> 60a4b9ddfe333fe1d660863b1cb7740b7a89e6fb
     <button style="margin:1rem"  type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ajouter Rapport</button>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

@@ -30,9 +30,9 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Editer Oeuvre</h3></div>
                                     <div class="card-body">
                                        
-                                        <form  action="{{ url('Oeuvre/'.$Oeuvre->id) }}"  method="POST">
+                                        <form  action="{{ url('Oeuvre/'.$Oeuvre->id) }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            @method('PUT')
+                                            @method('PATCH')
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -58,10 +58,10 @@
                                                     <textarea
                                                         name="description" 
                                                         class="form-control" 
-                                                        value="{{ $Oeuvre->description }}"
+                                                        value=""
                                                         placeholder="Enter desc">
                                                        
-                                                        
+                                                        {{ $Oeuvre->description }}
                                                     </textarea>                    
                                                     <label for="description">Description</label>
                                                     </div>
