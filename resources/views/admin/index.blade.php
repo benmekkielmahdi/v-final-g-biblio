@@ -1,4 +1,6 @@
 <x-app-layout>
+
+
       <style>
         #myBtn{
             color: blue;
@@ -97,6 +99,7 @@
                                             <th>description</th>
                                             <th>category</th>
                                             <th>qt</th>
+                                            <th>actions</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -108,6 +111,7 @@
                                             <th>description</th>
                                             <th>category</th>
                                             <th>qt</th>
+                                            <th>actions</th>
                                         </tr>
                                     </tfoot>
 
@@ -132,6 +136,7 @@
                                             </td>
                                             <td>{{ $oeuvre->category_id}}</td>
                                             <td>{{ $oeuvre->qt }}</td>
+                                            
                                             <td>
                                                 <form action="{{ route('Oeuvre.destroy',$oeuvre) }}" method="POST">
                                                     @csrf
@@ -143,7 +148,6 @@
                                                 </form>
 
                                             </td>
-                                         
                                             
                                         </tr>
                                         @endforeach
@@ -168,13 +172,16 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="{{asset('js/scripts.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('assets/demo/chart-area-demo.js')}}"></script>
         <script src="{{asset('assets/demo/chart-bar-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+        
         <script type="text/javascript">
         // Hide the extra content initially, using JS so that if JS is disabled, no problemo:
                     $('.read-more-content').addClass('hide_content')
