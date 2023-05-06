@@ -28,15 +28,15 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Oeuvres</div>
                             <a class="nav-link" href="{{ url('/Oeuvre') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                Oeuvres
                             </a>
                           
                             <div class="sb-sidenav-menu-heading">Tasks</div>
                             <a class="nav-link" href="{{ url('Category') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
                                 Categories
                             </a>
                              
@@ -71,6 +71,7 @@
                                 <tr>
                                     <th>id</th>
                                     <th>nom</th>
+                                    <th>actions</th>
                                     
                                 </tr>
                             </thead>

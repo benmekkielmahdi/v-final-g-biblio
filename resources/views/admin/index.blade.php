@@ -53,7 +53,7 @@
                             <div class="sb-sidenav-menu-heading">Oeuvre</div>
                             <a class="nav-link" href="{{ url('/Oeuvre') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
-                                Oeuvre
+                                Oeuvres
                             </a>
                           
                             <div class="sb-sidenav-menu-heading">Tasks</div>
