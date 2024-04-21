@@ -11,5 +11,11 @@ class AdminController extends Controller
         return view('admin.admin',compact('books'));
     }
 
+
+    public function demandes(){
+        $demandes= Demande::all();
+        return view('admin.admin',compact('demandes'));
+    }
+
     
 }

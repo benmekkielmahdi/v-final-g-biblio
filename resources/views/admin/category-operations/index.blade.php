@@ -39,7 +39,12 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
                                 Categories
                             </a>
-                             
+
+                            <a class="nav-link" href="{{ url('/demandes') }}">
+                                <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
+                                Demandes
+                            </a>
+                        
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

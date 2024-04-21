@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LivreController;
 use App\Http\Controllers\OeuvreController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DemandeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'OeuvreController@visiteur');
 
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/manager', 'ManagerController@index')->name('manager')->middleware('manager');
@@ -33,7 +32,9 @@ Route::post('/books/{id}', 'LivreController@storecomment')->name('storecomment')
 Route::get('/categories/{id}', 'LivreController@viewByCategory')->name('voirparcategorie');
 
 Route::resource('Rapport','RapportController');
-
+Route::post('/demande','DemandeController@store')->name('demande');
+Route::get('/demandes','DemandeController@index')->name('demandeadmin');
+Route::get('/mesdemandes','DemandeController@mesdemandes')->name('mesdemandes');
 
 
 Route::middleware(['auth','admin'])->group(function(){

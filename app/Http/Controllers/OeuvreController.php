@@ -29,6 +29,16 @@ class OeuvreController extends Controller
       
     }
     
+    public function visiteur()
+    {
+        $oeuvre =new Oeuvre;
+        $oeuvre =  $oeuvre::all();
+       // return $oeuvre;
+       //return view('admin.admin')->with('oeuvre', $oeuvre);
+        return view('welcome ', compact('oeuvre'));
+      
+    }
+    
     
     /**
      * Show the form for creating a new resource.

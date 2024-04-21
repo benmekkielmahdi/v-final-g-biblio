@@ -3,11 +3,12 @@
 
 <footer>
         <div class="footer-content container">
-            <div class="made-with">Made with <i class="bi bi-suit-heart-fill"></i> by Ben Mekki Mouad</div>
+            <div class="made-with">Made by team TIME SQUARE </div>
+            <div> Copyrights © UMI ENS-MEKNES 2023</div>
             <ul>
-            <span><a href="https://www.linkedin.com/in/mouad-ben-mekki-b87219216"><i class="bi bi-linkedin"></i></a></span>
-            <span><a href="https://www.instagram.com/grandpaframe/"><i class="bi bi-instagram"></i></a></span>
-            <span><a href="mailto:benmekkimouad@gmail.com""><i class="fa fa-envelope"></i></a></span>
+            <span><a href=""><i class="bi bi-linkedin"></i></a></span>
+            <span><a href=""><i class="bi bi-instagram"></i></a></span>
+            <span><a href=""><i class="fa fa-envelope"></i></a></span>
             </ul>
         </div> <!-- end footer-content -->
     </footer>

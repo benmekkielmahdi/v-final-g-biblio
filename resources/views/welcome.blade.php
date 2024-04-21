@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="me.css" type='text/css' />
-        <link rel="icon" href="globe.png">
+        
+<link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
         <title>Biblio</title>
 
@@ -92,25 +99,19 @@
 
                             <div class="ml-12" >
                                 <div id="trytr" class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                   <img src="books.png" width=50%>
+                                   <img src="https://i.postimg.cc/pVzMP4fc/logoens.png" width=70%>
                                    <br>
-                                    <div class="bienvenue">Bienvenue dans votre bibliothèque ENS</div>   </br></br>
-                                    <button type="button" class="button" href="register" style=" padding:1rem;"><span><a href="register">Joignez-nous</a></span></button>
+                                    <div class="bienvenue">Bienvenue dans votre bibliothèque ENS Meknes</div>   </br></br>
+                                    <button type="button" class="button" href="register" style=" padding:0.5rem;"><span><a href="register">Joignez-nous</a></span></button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
+                           
+                            <x-slide />
 
-                            <div class="ml-4 text-lg leading-7 font-semibold">“Le meilleur chemin pour venir au théâtre passe par la lecture.”</div>
-                            </div>
-                                                                                                                
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                </br>
-                                De Michel Deutsch.   </div>
-                            </div>
+                           
                         </div>
 
                         
@@ -123,7 +124,47 @@
                 
             </div>
         </div>
-    </div>                           
+    </div>   
+    
+    
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+              <div class="card-group">
+                  
+                 @forelse($oeuvre as $ouvrage)
+                
+                <div class="card mr-3" id="gal">
+                    <a href="{{route('bookdetails', ['id'=>$ouvrage->id])}}"><img class="card-img-top" src="{{ asset('storage/'.$ouvrage->image) }}" alt="Card image cap"></a>
+                    <div class="card-body">
+                    <a href="{{route('bookdetails', ['id'=>$ouvrage->id])}}"  " ><h5 class="card-title"><b>{{ $ouvrage->titre }}</b></h5></a>
+                    <a href="{{route('bookdetails', ['id'=>$ouvrage->id])}}" ><p class="card-text"><i>{{ $ouvrage->auteur }}</i></p></a>
+                    </div>
+                    
+                </div> 
+              
+                @empty
+                    <div>No Item Found!</div>
+               
+                @endforelse
+               
+             
+            </div>
+        </div>
+    </div>
+    <style>
+        #gal{
+            min-width: 160px;
+            max-width: 160px;
+            margin: 1rem;
+        }
+        .card-img-top{
+            width: 160px;
+            height : 210px;
+        }
+    </style>
+    
     </body>
     
 </html>
